@@ -1,0 +1,1 @@
+Files inside this folder are not to be published with the extension on the app store, these are mostly just assets.
