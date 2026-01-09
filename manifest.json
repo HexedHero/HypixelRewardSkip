@@ -1,36 +1,22 @@
 {
-
     "name": "Hypixel Reward Skip",
     "author": "HexedHero",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Auto skip Hypixel's daily reward!",
     "manifest_version": 3,
-
-    "content_scripts":
-    [
-
+    "content_scripts": [
         {
-
             "matches": ["*://rewards.hypixel.net/*"],
-            "js": ["shaded/jquery-3.6.0.min.js", "inject.js"],
+            "js": ["inject.js"], 
             "run_at": "document_end"
-
         }
-
     ],
-    "host_permissions":
-    [
-
+    "host_permissions": [
         "*://rewards.hypixel.net/*"
-
     ],
-    "icons":
-    {
-
+    "icons": {
         "16": "icon16.png",
         "48": "icon48.png",
         "128": "icon128.png"
-
     }
-
 }

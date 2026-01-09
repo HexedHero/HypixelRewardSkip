@@ -1,28 +1,24 @@
+const MAX_ATTEMPTS = 20;
+const CHECK_INTERVAL_MS = 500;
 
-var task;
+let attempts = 0;
+let task;
 
-function clickSkip()
-{
-
-    $("button").each(function()
-    {
-
-        if ($(this).children().is("span"))
-        {
-
-            $(this).children().click();
+function scanAndClick() {
+    attempts++;
+    const buttons = document.querySelectorAll('button');
+    for (const button of buttons) {
+        // Check if the button's text contains "Skip"
+        if (button.textContent.includes("Skip")) {
+            button.click();
             clearInterval(task);
             return;
-
         }
+    }
 
-    });
-
+    if (attempts >= MAX_ATTEMPTS) {
+        clearInterval(task);
+    }
 }
 
-$(window).on("load", function()
-{
-
-    task = setInterval(clickSkip, 500);
-
-});
+task = setInterval(scanAndClick, CHECK_INTERVAL_MS);
