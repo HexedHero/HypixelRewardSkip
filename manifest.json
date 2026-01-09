@@ -7,7 +7,7 @@
     "content_scripts": [
         {
             "matches": ["*://rewards.hypixel.net/*"],
-            "js": ["inject.js"], 
+            "js": ["inject.js"],
             "run_at": "document_end"
         }
     ],
