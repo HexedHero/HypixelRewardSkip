@@ -11,7 +11,6 @@ function scanAndClick() {
         // Check if the button's text contains "Skip"
         if (button.textContent.includes("Skip")) {
             button.click();
-            clearInterval(task);
             return;
         }
     }
